@@ -1,14 +1,14 @@
 {
-  "name": "generator-gulp-bootstrap3",
-  "version": "0.1.1",
-  "description": "Scaffold out a Bootstrap 3 web app",
-  "author": "Jurjen Smakman",
-  "dependencies": {
-    "yeoman-generator": "^0.16.0"
-  },
-  "repository": "smakman/generator-gulp-bootstrap",
+	"name": "generator-gulp-bootstrap3",
+	"version": "0.1.2",
+	"description": "Scaffold out a Bootstrap 3 web app",
+	"author": "Jurjen Smakman",
+	"dependencies": {
+		"yeoman-generator": "^0.16.0"
+	},
+	"repository": "smakman/generator-gulp-bootstrap",
 	"main": "app/index.js",	
-  "keywords": [
+	"keywords": [
 		"yeoman-generator",
 		"web",
 		"app",
@@ -19,7 +19,7 @@
 		"bower"
 	],
 	"engines": {
-	  "node": ">=0.10.0",
-	  "npm": ">=1.3"
+		"node": ">=0.10.0",
+		"npm": ">=1.3"
 	}
 }

@@ -1,0 +1,9 @@
+{
+  "name": "generator-gulp-bootstrap",
+  "version": "0.1.0",
+  "description": "A gulp setup for Bootstrap webapps",
+  "keywords": ["yeoman-generator"],
+  "dependencies": {
+    "yeoman-generator": "^0.16.0"
+  }
+}

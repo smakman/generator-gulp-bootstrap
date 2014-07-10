@@ -1,0 +1,33 @@
+{
+  "devDependencies": {
+    "gulp": "~3.8.5",
+    "gulp-rename": "~1.2.0",
+    "gulp-clean": "~0.3.1",
+    "gulp-livereload": "~2.1.0",
+    "gulp-ruby-sass": "~0.6.0",
+    "gulp-uglify": "~0.3.1",
+    "gulp-concat": "~2.2.0",
+    "gulp-notify": "~1.4.0",
+    "gulp-autoprefixer": "0.0.8",
+    "gulp-jshint": "~1.6.4",
+    "gulp-cache": "~0.2.0",
+    "gulp-minify-css": "~0.3.6",
+    "gulp-imagemin": "~0.6.1",
+    "gulp-coffee": "~2.0.1",
+    "gulp-include": "~0.2.3",
+    "gulp-ejs": "~0.3.0",
+    "gulp-util": "~2.2.19",
+    "gulp-rev": "~0.4.1",
+    "gulp-rev-all": "~0.5.2",
+    "gulp-if": "~1.2.1",
+    "gulp-jsbeautifier": "0.0.2",
+    "gulp-prettify": "~0.2.0",
+    "gulp-flatten": "0.0.2",
+    "connect": "^2.14.4",
+    "connect-livereload": "^0.4.0",
+    "opn": "~0.1.2"
+  },
+  "dependencies": {
+    "css-sprite": "~0.7.0-beta3"
+  }
+}

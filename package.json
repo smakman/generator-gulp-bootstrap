@@ -1,9 +1,25 @@
 {
   "name": "generator-gulp-bootstrap",
   "version": "0.1.0",
-  "description": "A gulp setup for Bootstrap webapps",
-  "keywords": ["yeoman-generator"],
+  "description": "Scaffold out a Bootstrap 3 web app",
+  "author": "Jurjen Smakman",
   "dependencies": {
     "yeoman-generator": "^0.16.0"
-  }
+  },
+  "repository": "smakman/generator-gulp-bootstrap",
+	"main": "app/index.js",	
+  "keywords": [
+		"yeoman-generator",
+		"web",
+		"app",
+		"front-end",
+		"jquery",
+		"gulp",
+		"bootstrap",
+		"bower"
+	],
+	"engines": {
+	  "node": ">=0.10.0",
+	  "npm": ">=1.3"
+	}
 }

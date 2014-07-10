@@ -14,8 +14,8 @@
 
 ## Getting started
 
-- Install: `npm install -g generator-gulp-webapp`
-- Init: `yo gulp-bootstrap`
+- Install: `npm install -g generator-gulp-bootstrap3`
+- Init: `yo gulp-bootstrap3`
 - Build: `gulp`
 - Run: `gulp watch`
 

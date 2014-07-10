@@ -1,6 +1,6 @@
 # Gulp Bootstrap 3 Framework
 
-Framework for quickly developing front-end web apps using [Gulp](http://gulpjs.com/), [Bower](http://bower.io/) and [Bootstrap 3](http://getbootstrap.com/).
+> [Yeoman](http://yeoman.io) generator that scaffolds out a front-end web app using [gulp](http://gulpjs.com/), [Bower](http://bower.io/) and [Bootstrap 3](http://getbootstrap.com/).
 
 ## Features
 

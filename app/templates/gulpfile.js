@@ -44,10 +44,10 @@ gulp.task('css', function() {
       ]
     }))
     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-    .pipe(gulp.dest('html/assets/css'))
+    .pipe(gulp.dest('dist/assets/css'))
     .pipe(rename({suffix: '.min'}))
     .pipe(minifycss())
-    .pipe(gulp.dest('html/assets/css'))
+    .pipe(gulp.dest('dist/assets/css'))
     .pipe(notify({ message: 'CSS task complete' }));
 });
 
@@ -57,10 +57,10 @@ gulp.task('js', function() {
     .pipe(include())
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('default'))
-    .pipe(gulp.dest('html/assets/js'))
+    .pipe(gulp.dest('dist/assets/js'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(uglify())
-    .pipe(gulp.dest('html/assets/js'))
+    .pipe(gulp.dest('dist/assets/js'))
     .pipe(notify({ message: 'JS task complete' }));
 });
 
@@ -82,9 +82,9 @@ gulp.task('sprites', function () {
 gulp.task('images', function() {
   return gulp.src(paths.images)
     .pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
-    .pipe(gulp.dest('html/assets/images'))
+    .pipe(gulp.dest('dist/assets/images'))
     //.pipe(rev())
-    //.pipe(gulp.dest('html/assets/images'))
+    //.pipe(gulp.dest('dist/assets/images'))
     //.pipe(rev.manifest())
     //.pipe(gulp.dest('.'))
     .pipe(notify({ message: 'Images task complete' }));
@@ -100,13 +100,13 @@ gulp.task('templates', function() {
 
 // Clean up
 gulp.task('clean', function() {
-  return gulp.src(['html/assets/css', 'html/assets/js', 'html/assets/images', 'html/assets/fonts', 'html/*.html'], {read: false})
+  return gulp.src(['dist/assets/css', 'dist/assets/js', 'dist/assets/images', 'dist/assets/fonts', 'dist/*.html'], {read: false})
     .pipe(clean());
 });
 
 // Rev all files
 gulp.task('rev', function () {
-  gulp.src('html/**')
+  gulp.src('dist/**')
     .pipe(revall({ ignore: [/^\/favicon.ico$/g, '.html'] }))
     .pipe(gulp.dest('rev'));
 });
@@ -115,7 +115,7 @@ gulp.task('rev', function () {
 gulp.task('fonts', function() {
   gulp.src(['src/**/*.eot','src/**/*.svg','src/**/*.ttf','src/**/*.woff'])
     .pipe(flatten())
-    .pipe(gulp.dest('html/assets/fonts'));
+    .pipe(gulp.dest('dist/assets/fonts'));
 });
 
 // Default task
@@ -128,8 +128,8 @@ gulp.task('connect', function() {
   var connect = require('connect');
   var app = connect()
       .use(require('connect-livereload')({ port: 35729 }))
-      .use(connect.static('html'))
-      .use(connect.directory('html'));
+      .use(connect.static('dist'))
+      .use(connect.directory('dist'));
         
   require('http').createServer(app)
     .listen(9000)
@@ -168,7 +168,7 @@ gulp.task('watch', ['connect', 'serve'], function() {
   var server = livereload();
 
   // Watch any files in assets folder reload on change
-  gulp.watch(['html/assets/**', 'html/*.html']).on('change', function(file) {
+  gulp.watch(['dist/assets/**', 'dist/*.html']).on('change', function(file) {
     server.changed(file.path);
   });
 

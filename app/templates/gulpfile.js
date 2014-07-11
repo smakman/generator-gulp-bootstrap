@@ -113,7 +113,7 @@ gulp.task('rev', function () {
 
 // Copy fonts
 gulp.task('fonts', function() {
-  gulp.src(['src/**/*.eot','src/**/*.svg','src/**/*.ttf','src/**/*.woff'])
+  gulp.src('src/**/*.{eot,svg,ttf.woff}')
     .pipe(flatten())
     .pipe(gulp.dest('dist/assets/fonts'));
 });
@@ -162,7 +162,7 @@ gulp.task('watch', ['connect', 'serve'], function() {
   gulp.watch('src/templates/**/*.ejs', ['templates']);
   
   // Watch for fonts
-  gulp.watch(['src/**/*.eot','src/**/*.svg','src/**/*.ttf','src/**/*.woff'], ['fonts']);
+  gulp.watch('src/**/*.{eot,svg,ttf.woff}', ['fonts']);
   
   // Create LiveReload server
   var server = livereload();

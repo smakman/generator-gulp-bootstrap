@@ -94,7 +94,7 @@ gulp.task('images', function() {
 gulp.task('templates', function() {
   return gulp.src(paths.templates)
     .pipe(ejs().on('error', gutil.log))
-    .pipe(gulp.dest('html'))
+    .pipe(gulp.dest('dist'))
     .pipe(notify({ message: 'Templates task complete' }));
 });
 
@@ -113,7 +113,7 @@ gulp.task('rev', function () {
 
 // Copy fonts
 gulp.task('fonts', function() {
-  gulp.src('src/**/*.{eot,svg,ttf.woff}')
+  gulp.src('src/**/*.{eot,svg,ttf,woff}')
     .pipe(flatten())
     .pipe(gulp.dest('dist/assets/fonts'));
 });

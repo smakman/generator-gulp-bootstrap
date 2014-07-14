@@ -1,5 +1,5 @@
 node_modules
-html
+dist
 .sass-cache
 .tmp
 src/vendor

@@ -28,6 +28,6 @@
     "opn": "~0.1.2"
   },
   "dependencies": {
-    "css-sprite": "~0.7.0-beta3"
+    "css-sprite": "~0.9.6"
   }
 }

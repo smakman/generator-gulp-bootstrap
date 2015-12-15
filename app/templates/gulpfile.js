@@ -61,7 +61,7 @@ gulp.task('js', function() {
 });
 
 // Sprite generation
-gulp.task('sprites', function() {
+gulp.task('sprites', function(cb) {
   return sprity.src({
     src: './src/images/sprite/*.png',
     style: './_sprite.sass',
@@ -73,6 +73,9 @@ gulp.task('sprites', function() {
     }, {
       ratio: 2, dpi: 192
     }],
+  }).on('error', function(err) {
+    gutil.log(err.toString());
+    cb();
   })
   .pipe(gulpif('*.png', gulp.dest('./src/images/'), gulp.dest('./src/css/partials/')))
 });

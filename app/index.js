@@ -4,6 +4,7 @@ var util = require('util');
 var path = require('path');
 var spawn = require('child_process').spawn;
 var yeoman = require('yeoman-generator');
+var mkdirp = require('mkdirp');
 
 var AppGenerator = module.exports = function Appgenerator(args, options, config) {
   yeoman.generators.Base.apply(this, arguments);
@@ -40,6 +41,10 @@ AppGenerator.prototype.jshint = function () {
 
 AppGenerator.prototype.source = function () {
   this.directory('src');
+};
+
+AppGenerator.prototype.misc = function() {
+  mkdirp('src/images/sprite');
 };
 
 AppGenerator.prototype.install = function () {

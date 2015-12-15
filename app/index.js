@@ -45,6 +45,7 @@ AppGenerator.prototype.source = function () {
 
 AppGenerator.prototype.misc = function() {
   mkdirp('src/images/sprite');
+  mkdirp('src/images/icons');
 };
 
 AppGenerator.prototype.install = function () {

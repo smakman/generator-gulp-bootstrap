@@ -10,7 +10,7 @@ var FUSE = FUSE || {};
 
   FUSE.Events = {};
 
-  FUSE.EventManager = (function () {
+  FUSE.EventManager = (function() {
     return {
       subscribe: function (event, fn) {
         $(this).unbind(event, fn).bind(event, fn);
@@ -35,7 +35,7 @@ var FUSE = FUSE || {};
       };
 
       return self;
-    } ();
+    }) ();
 
     var initialised = false;
 
@@ -54,4 +54,4 @@ var FUSE = FUSE || {};
 
 }) (jQuery);
 
-$(document).on('ready', 'FUSE.PageManager.init');
+$(document).on('ready', FUSE.PageManager.init);

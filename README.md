@@ -49,7 +49,7 @@ By default retina is turned on, therefore you should only store retina images in
   +sprite($cart)
 ```
 
-All HTML elements which use the sprite should have `class="icon"`
+All HTML elements which use the sprite should have `class="sprite"`
 
 Check out the [css-sprite documentation](https://www.npmjs.org/package/css-sprite) for other examples.
 

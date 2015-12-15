@@ -1,6 +1,6 @@
 {
 	"name": "generator-gulp-bootstrap3",
-	"version": "0.3.0",
+	"version": "0.3.1",
 	"description": "Scaffold out a Bootstrap 3 web app",
 	"author": "Jurjen Smakman",
 	"dependencies": {

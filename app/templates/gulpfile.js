@@ -16,14 +16,13 @@ var gulp = require('gulp'),
     include = require('gulp-include'),
     ejs = require('gulp-ejs'),
     gutil = require('gulp-util'),
-    rev = require('gulp-rev'),
     revall = require('gulp-rev-all'),
     livereload = require('gulp-livereload'),
     gulpif = require('gulp-if'),
-    sprite = require('css-sprite').stream,
     flatten = require('gulp-flatten'),
     iconfont = require('gulp-iconfont'),
-    iconfontCss = require('gulp-iconfont-css');
+    iconfontCss = require('gulp-iconfont-css'),
+    sprity = require('sprity');
     
 // Define paths
 var paths = {  
@@ -61,19 +60,21 @@ gulp.task('js', function() {
     .pipe(notify({ message: 'JS task complete' }));
 });
 
-// Generate sprite
-gulp.task('sprites', function () {
-  return gulp.src('./src/images/sprite/*.png')
-    .pipe(sprite({
-      name: 'sprite',
-      style: '_sprite.sass',
-      cssPath: '../images',
-      processor: 'sass',
-      retina: true,
-      prefix: 'sprite'
-    }).on('error', gutil.log))
-    .pipe(gulpif('*.png', gulp.dest('./src/images/'), gulp.dest('./src/css/partials/')))    
-    .pipe(notify({ message: 'Sprites task complete' }));
+// Sprite generation
+gulp.task('sprites', function() {
+  return sprity.src({
+    src: './src/images/sprite/*.png',
+    style: './_sprite.sass',
+    processor: 'sass',
+    'style-type': 'sass',
+    prefix: 'sprite',
+    dimension: [{
+      ratio: 1, dpi: 72
+    }, {
+      ratio: 2, dpi: 192
+    }],
+  })
+  .pipe(gulpif('*.png', gulp.dest('./src/images/'), gulp.dest('./src/css/partials/')))
 });
 
 // Optimize images
@@ -106,7 +107,7 @@ gulp.task('rev', function () {
 
 // Copy fonts
 gulp.task('fonts', function() {
-  gulp.src('src/**/*.{eot,svg,ttf,woff}')
+  gulp.src('src/**/*.{eot,svg,ttf,woff,woff2}')
     .pipe(flatten())
     .pipe(gulp.dest('dist/assets/fonts'));
 });
@@ -173,7 +174,7 @@ gulp.task('watch', ['connect', 'serve'], function() {
   gulp.watch('./src/templates/**/*.ejs', ['templates']);
   
   // Watch for fonts
-  gulp.watch('./src/**/*.{eot,svg,ttf.woff}', ['fonts']);
+  gulp.watch('./src/**/*.{eot,svg,ttf,woff,woff2}', ['fonts']);
   
   // Create LiveReload server
   livereload({ start: true });

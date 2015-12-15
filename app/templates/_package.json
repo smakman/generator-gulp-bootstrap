@@ -25,7 +25,9 @@
     "gulp-util": "~3.0.7",
     "opn": "~3.0.3",
     "serve-index": "^1.7.2",
-    "serve-static": "^1.10.0"
+    "serve-static": "^1.10.0",
+    "gulp-iconfont": "^5.0.1",
+    "gulp-iconfont-css": "2.0.0"
   },
   "dependencies": {
     "css-sprite": "~0.9.9"

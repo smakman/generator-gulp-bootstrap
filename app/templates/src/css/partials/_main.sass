@@ -1,2 +1,18 @@
-html
-  font-family: Arial, sans-serif
+html, body
+  background: $color-background
+  font-family: $font-primary
+  font-size: $font-size
+  color: $color-text
+  -webkit-font-smoothing: antialiased
+
+  @media (min-width: $screen-sm-min)
+    font-size: $font-size-sm
+
+  @media (min-width: $screen-md-min)
+    font-size: $font-size-md
+
+  @media (min-width: $screen-lg-min)
+    font-size: $font-size-lg
+
+a
+  color: $color-highlight
